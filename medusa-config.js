@@ -19,6 +19,7 @@ switch (process.env.NODE_ENV) {
 
 try {
   dotenv.config({ path: process.cwd() + "/" + ENV_FILE_NAME });
+  console.error("Failed to load the .env file", e);
 } catch (e) {}
 
 // CORS when consuming Medusa from admin
@@ -77,7 +78,7 @@ const projectConfig = {
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: process.env.STORE_CORS,
   database_url: process.env.DATABASE_URL,
-  admin_cors: process env.ADMIN_CORS,
+  admin_cors: process.env.ADMIN_CORS,
   redisUrl: process.env.REDIS_URL,
 };
 
