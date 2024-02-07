@@ -19,6 +19,7 @@ switch (process.env.NODE_ENV) {
 
 try {
   dotenv.config({ path: process.cwd() + "/" + ENV_FILE_NAME });
+  console.error("Failed to load the .env file", e);
 } catch (e) {}
 
 // CORS when consuming Medusa from admin
@@ -31,7 +32,7 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 const DATABASE_URL =
   process.env.DATABASE_URL || "postgres://localhost/medusa-starter-default";
 
-const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
+const REDIS_URL = process.env.REDIS_URL || "redis://default:jaJcjndJKh34BNbkeogoNPaifmGlDN1B@roundhouse.proxy.rlwy.net:27355";
 
 const plugins = [
   `medusa-fulfillment-manual`,
@@ -60,13 +61,13 @@ const modules = {
   eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: process.env.REDIS_URL,
+      redisUrl: "redis://default:jaJcjndJKh34BNbkeogoNPaifmGlDN1B@roundhouse.proxy.rlwy.net:27355",
     },
   },
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: process.env.REDIS_URL,
+      redisUrl: "redis://default:jaJcjndJKh34BNbkeogoNPaifmGlDN1B@roundhouse.proxy.rlwy.net:27355",
     },
   },
 };
