@@ -61,13 +61,13 @@ const modules = {
   eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: redisUrl,
+      redisUrl: "redis://default:jaJcjndJKh34BNbkeogoNPaifmGlDN1B@roundhouse.proxy.rlwy.net:27355",
     },
   },
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: redisUrl,
+      redisUrl: "redis://default:jaJcjndJKh34BNbkeogoNPaifmGlDN1B@roundhouse.proxy.rlwy.net:27355",
     },
   },
 };
