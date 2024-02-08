@@ -1,7 +1,6 @@
-import MedusaContainer from "@medusajs/medusa/dist/types/global";
-import NotificationService from "@medusajs/medusa/dist/services/notification";
+import { AwilixContainer } from "awilix";
 
-export default async (container: MedusaContainer) => {
-  const notificationService = container.resolve<NotificationService>("notificationService");
-  notificationService.subscribe("order.placed", "email-sender");
+export default async (container: AwilixContainer): Promise<void> => {
+  const notificationService = container.resolve("notificationService");
+  notificationService.subscribe("order.placed", EmailSenderService.identifier);
 };
