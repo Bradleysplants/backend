@@ -14,10 +14,11 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "baseUrl": ".",
-    "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "checkJs": false
+    "paths": {
+      "@services/*": ["src/services/*"]
   },
   "include": ["src/"],
   "exclude": [
