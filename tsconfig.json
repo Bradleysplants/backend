@@ -16,10 +16,11 @@
     "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "checkJs": false
+    "checkJs": false,
     "paths": {
       "@services/*": ["src/services/*"]
-  },
+  }
+},
   "include": ["src/"],
   "exclude": [
     "**/__tests__",
