@@ -47,7 +47,8 @@ const plugins = [
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
-      serve: true,
+      serve: false,
+      backend: "https://www.boujee-botanicals.store/admin",
       autoRebuild: true,
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
