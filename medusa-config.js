@@ -77,6 +77,9 @@ const modules = {
       redisUrl: "redis://default:jaJcjndJKh34BNbkeogoNPaifmGlDN1B@roundhouse.proxy.rlwy.net:27355",
     },
   },
+  notificationProvider: {
+    resolve: "@services/email-sender"
+  },
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
