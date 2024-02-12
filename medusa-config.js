@@ -45,8 +45,8 @@ const plugins = [
   {
     resolve: "@medusajs/admin",
     options: {
-      serve: false,
-      backend: "https://www.boujee-botanicals.store/admin",
+      serve: true,
+      /*backend: "",*/
       autoRebuild: true,
       path: "/app",
       develop: {
