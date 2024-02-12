@@ -51,7 +51,6 @@ const plugins = [
       path: "/app",
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
-        port: 7001,
       },
     },
      resolve: `medusa-payment-stripe`,
