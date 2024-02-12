@@ -48,6 +48,7 @@ const plugins = [
       serve: false,
       backend: "https://www.boujee-botanicals.store/admin",
       autoRebuild: true,
+      path: "/app",
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
         port: 7001,
