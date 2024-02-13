@@ -1,0 +1,12 @@
+# .railway.yml
+services:
+  web:
+    image: node:18
+    build:
+      commands:
+        - yarn install
+        - yarn build
+    start:
+      command: yarn start
+    environment:
+      NODE_ENV: production
