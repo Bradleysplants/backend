@@ -7,7 +7,7 @@ image = "node:18"
 # Install dependencies
 pre_commands = ["yarn install"]
 # Run migrations before the build
-commands = ["yarn medusa migrations run", "yarn run build"]
+commands = ["yarn medusa migrations run", "yarn run start"]
 
 [services.web.start]
-command = "yarn run start"
+command = "yarn run build"
