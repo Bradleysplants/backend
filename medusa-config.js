@@ -48,8 +48,6 @@ const plugins = [
       serve: true,
       autoRebuild: true,
       path: "/app",
-      develop: {
-        open: process.env.OPEN_BROWSER !== "false",
       },
     },
   },
