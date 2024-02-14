@@ -42,6 +42,7 @@ const plugins = [
   `medusa-payment-manual`,
   {
     resolve: `@medusajs/file-local`,
+    /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
       upload_dir: "uploads",
     },
@@ -52,6 +53,10 @@ const plugins = [
       serve: true,
       autoRebuild: true,
       path: "/app",
+      outDir: "build",
+      develop:
+        port: 7001,
+        logLevel: "verbose",
       },
     },
   },
