@@ -33,6 +33,10 @@ const DATABASE_URL = process.env.DATABASE_URL;
 
 const REDIS_URL = process.env.REDIS_URL;
 
+const COOKIE_SECRET = process.env.COOKIE_SECRET;
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
 const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
@@ -48,8 +52,6 @@ const plugins = [
       serve: true,
       autoRebuild: true,
       path: "/app",
-      develop: {
-        open: process.env.OPEN_BROWSER !== "false",
       },
     },
   },
@@ -71,12 +73,12 @@ const modules = {
 };
 
 const projectConfig = {
-  jwtSecret: process.env.JWT_SECRET,
-  cookieSecret: process.env.COOKIE_SECRET,
-  store_cors: STORE_CORS, // Using the variable defined above
-  database_url: DATABASE_URL, // Using the variable defined above
-  admin_cors: ADMIN_CORS, // Using the variable defined above
-  redisUrl: REDIS_URL, // Using the variable defined above
+  jwtSecret: JWT_SECRET,
+  cookieSecret: COOKIE_SECRET,
+  store_cors: STORE_CORS,
+  database_url: DATABASE_URL,
+  admin_cors: ADMIN_CORS,
+  redisUrl: REDIS_URL,
 };
 
 module.exports = {
