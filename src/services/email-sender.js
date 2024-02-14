@@ -2,6 +2,8 @@ const { AbstractNotificationService } = require("@medusajs/medusa");
 const AWS = require('aws-sdk');
 
 class EmailSenderService extends AbstractNotificationService {
+  static identifier = "emailSenderService";
+  
   constructor(container) {
     super(container);
 
