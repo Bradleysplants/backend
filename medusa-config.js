@@ -46,17 +46,11 @@ const plugins = [
     resolve: "@medusajs/admin",
     options: {
       serve: true,
-      /*backend: "",*/
       autoRebuild: true,
       path: "/app",
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
       },
-    },
-     resolve: `medusa-payment-stripe`,
-     options: {
-      api_key: process.env.STRIPE_API_KEY,
-      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
     },
   },
 ];
