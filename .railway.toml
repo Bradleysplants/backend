@@ -1,0 +1,13 @@
+# application.toml
+
+[services.web]
+image = "node:18"
+
+[services.web.build]
+# Install dependencies
+pre_commands = ["yarn install"]
+# Run migrations before the build
+commands = ["yarn medusa migrations run", "yarn run build"]
+
+[services.web.start]
+command = "yarn run start"
