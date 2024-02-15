@@ -20,7 +20,7 @@ class EmailSenderService extends AbstractNotificationService {
     // Example send logic tailored for "order.placed" event
     if (event === "order.placed" && data.email) {
       const params = {
-        Source: "your-email@example.com", // Replace with your verified sender email address in Amazon SES
+        Source: "delisa@boujeebotanical.store", // Replace with your verified sender email address in Amazon SES
         Destination: { ToAddresses: [data.email] },
         Message: {
           Subject: { Data: "Order Confirmation" },
