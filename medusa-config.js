@@ -37,7 +37,7 @@ const COOKIE_SECRET = process.env.COOKIE_SECRET;
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-const plugins = [
+plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
   {
