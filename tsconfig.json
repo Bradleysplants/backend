@@ -8,7 +8,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
     "declaration": true,
     "sourceMap": false,
     "outDir": "./dist",
@@ -19,14 +18,8 @@
     "checkJs": false,
     "paths": {
       "@services/*": ["src/services/*"]
-  }
-},
-  "include": ["src/"],
-  "exclude": [
-    "**/__tests__",
-    "**/__fixtures__",
-    "node_modules",
-    "build",
-    ".cache"
-  ]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/__tests__", "**/__fixtures__", "node_modules", "build", ".cache"]
 }
