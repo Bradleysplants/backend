@@ -23,71 +23,51 @@ try {
   console.error("Failed to load the .env file", e);
 }
 
-// CORS when consuming Medusa from admin
-const ADMIN_CORS = process.env.ADMIN_CORS;
-
-// CORS to avoid issues when consuming Medusa from a client
-const STORE_CORS = process.env.STORE_CORS;
-
-const DATABASE_URL = process.env.DATABASE_URL;
-
-const REDIS_URL = process.env.REDIS_URL;
-
-const COOKIE_SECRET = process.env.COOKIE_SECRET;
-
-const JWT_SECRET = process.env.JWT_SECRET;
-
-const plugins = [
-  `medusa-fulfillment-manual`,
-  `medusa-payment-manual`,
-  {
-    resolve: `@medusajs/file-local`,
-    /** @type {import('@medusajs/admin').PluginOptions} */
-    options: {
-      upload_dir: "uploads",
-    },
+// Defining configuration directly within module.exports
+module.exports = {
+  projectConfig: {
+    jwtSecret: process.env.JWT_SECRET,
+    cookieSecret: process.env.COOKIE_SECRET,
+    store_cors: process.env.STORE_CORS,
+    database_url: process.env.DATABASE_URL,
+    admin_cors: process.env.ADMIN_CORS,
+    redisUrl: process.env.REDIS_URL,
   },
-  {
-    resolve: "@medusajs/admin",
-    options: {
-      serve: true,
-      autoRebuild: true,
-      path: "/app",
-      outDir: "build",
-      develop:
-        port: 7001,
-        logLevel: "verbose",
+  plugins: [
+    `medusa-fulfillment-manual`,
+    `medusa-payment-manual`,
+    {
+      resolve: `@medusajs/file-local`,
+      options: {
+        upload_dir: "uploads",
+      },
+    },
+    {
+      resolve: "@medusajs/admin",
+      options: {
+        serve: true,
+        autoRebuild: true,
+        path: "/app",
+        outDir: "build",
+        develop: {
+          port: 7001,
+          logLevel: "verbose",
+        },
+      },
+    },
+  ],
+  modules: {
+    eventBus: {
+      resolve: "@medusajs/event-bus-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL,
+      },
+    },
+    cacheService: {
+      resolve: "@medusajs/cache-redis",
+      options: {
+        redisUrl: process.env.REDIS_URL,
       },
     },
   },
-];
-
-const modules = {
-  eventBus: {
-    resolve: "@medusajs/event-bus-redis",
-    options: {
-      redisUrl: REDIS_URL, // Using the variable defined above
-    },
-  },
-  cacheService: {
-    resolve: "@medusajs/cache-redis",
-    options: {
-      redisUrl: REDIS_URL, // Using the variable defined above
-    },
-  },
-};
-
-const projectConfig = {
-  jwtSecret: JWT_SECRET,
-  cookieSecret: COOKIE_SECRET,
-  store_cors: STORE_CORS,
-  database_url: DATABASE_URL,
-  admin_cors: ADMIN_CORS,
-  redisUrl: REDIS_URL,
-};
-
-module.exports = {
-  projectConfig,
-  plugins,
-  modules,
 };
