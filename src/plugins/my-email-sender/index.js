@@ -1,4 +1,4 @@
-const EmailSenderService = require("./email-sender-service");
+const EmailSenderService = require("./emailSenderService");
 
 module.exports = {
   register: (container, options) => {
