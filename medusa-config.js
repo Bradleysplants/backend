@@ -55,6 +55,16 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `src/plugins/my-email-sender`,
+      options: {
+        awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        awsRegion: process.env.AWS_REGION,
+        emailSource: "delisa@boujeebotanical.store", // Your verified sender email address
+        },
+      },
+    },
   ],
   modules: {
     eventBus: {
