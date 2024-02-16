@@ -68,8 +68,8 @@ module.exports = {
         order_placed_cc: 'person1@example.com,person2@example.com', 
         enable_endpoint: process.env.SES_ENABLE_ENDPOINT,
         enable_sim_mode: process.env.SES_ENABLE_SIM_MODE
-    }
-  },
+     }
+   },
   ],
   modules: {
     eventBus: {
