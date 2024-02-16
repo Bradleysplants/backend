@@ -68,8 +68,17 @@ module.exports = {
         order_placed_cc: 'person1@example.com,person2@example.com', 
         enable_endpoint: process.env.SES_ENABLE_ENDPOINT,
         enable_sim_mode: process.env.SES_ENABLE_SIM_MODE
-     }
-   },
+      }
+    },
+    {
+    resolve: `medusa-payment-paypal`,
+    options: {
+      sandbox: process.env.PAYPAL_SANDBOX,
+      clientId: process.env.PAYPAL_CLIENT_ID,
+      clientSecret: process.env.PAYPAL_CLIENT_SECRET,
+      authWebhookId: process.env.PAYPAL_AUTH_WEBHOOK_ID,
+      },
+    },
   ],
   modules: {
     eventBus: {
