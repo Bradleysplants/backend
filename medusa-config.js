@@ -53,8 +53,8 @@ module.exports = {
           port: 7001,
           logLevel: "verbose",
         },
-      },
-    },
+      }, 
+    }, 
     {
       resolve: `src/plugins/my-email-sender`,
       options: {
@@ -62,7 +62,6 @@ module.exports = {
         awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         awsRegion: process.env.AWS_REGION,
         emailSource: "delisa@boujeebotanical.store", // Your verified sender email address
-        },
       },
     },
   ],
