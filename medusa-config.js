@@ -56,7 +56,6 @@ module.exports = {
       }, 
     }, 
     {
-      {
       resolve: "medusa-plugin-ses",
       options: {
         access_key_id: process.env.SES_ACCESS_KEY_ID,
