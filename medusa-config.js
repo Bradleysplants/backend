@@ -56,14 +56,21 @@ module.exports = {
       }, 
     }, 
     {
-      resolve: `src/plugins/my-email-sender`,
+      {
+      resolve: "medusa-plugin-ses",
       options: {
-        awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        awsRegion: process.env.AWS_REGION,
-        emailSource: "delisa@boujeebotanical.store", // Your verified sender email address
-      },
-    },
+        access_key_id: process.env.SES_ACCESS_KEY_ID,
+        secret_access_key: process.env.SES_SECRET_ACCESS_KEY,
+        region: process.env.SES_REGION,
+        from: process.env.SES_FROM,
+        template_path: process.env.SES_TEMPLATE_PATH,
+        partial_path: process.env.SES_PARTIAL_PATH,
+        // optional string containing email address separated by comma
+        order_placed_cc: 'person1@example.com,person2@example.com', 
+        enable_endpoint: process.env.SES_ENABLE_ENDPOINT,
+        enable_sim_mode: process.env.SES_ENABLE_SIM_MODE
+    }
+  },
   ],
   modules: {
     eventBus: {
