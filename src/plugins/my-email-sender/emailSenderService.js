@@ -3,24 +3,24 @@ const AWS = require('aws-sdk');
 
 class EmailSenderService extends AbstractNotificationService {
   static identifier = "emailSenderService";
-  
-  constructor(container) {
+
+  constructor(container, options) {
     super(container);
 
-    // Initialize AWS SES Client with environment variables
-    AWS.config.update({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      region: process.env.AWS_REGION // Ensure your AWS region is specified here
+    // Initialize AWS SES Client with options passed to the plugin
+    this.sesClient = new AWS.SES({
+      apiVersion: '2010-12-01',
+      accessKeyId: options.awsAccessKeyId,
+      secretAccessKey: options.awsSecretAccessKey,
+      region: options.awsRegion
     });
-    this.sesClient = new AWS.SES({apiVersion: '2010-12-01'});
   }
 
   async sendNotification(event, data) {
     // Example send logic tailored for "order.placed" event
     if (event === "order.placed" && data.email) {
       const params = {
-        Source: "delisa@boujeebotanical.store", // Replace with your verified sender email address in Amazon SES
+        Source: options.emailSource, // Use the verified sender email address specified in plugin options
         Destination: { ToAddresses: [data.email] },
         Message: {
           Subject: { Data: "Order Confirmation" },
