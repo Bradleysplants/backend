@@ -33,7 +33,7 @@ module.exports = {
     admin_cors: process.env.ADMIN_CORS,
     redisUrl: process.env.REDIS_URL,
   },
-  plugins: [
+const plugins: [
     `medusa-fulfillment-manual`,
     `medusa-payment-manual`,
     {
