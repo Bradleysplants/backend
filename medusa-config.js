@@ -68,7 +68,7 @@ module.exports = {
         order_placed_cc: 'person1@example.com,person2@example.com', 
         enable_endpoint: process.env.SES_ENABLE_ENDPOINT,
         enable_sim_mode: process.env.SES_ENABLE_SIM_MODE
-      }
+      },
     },
     {
     resolve: `medusa-payment-paypal`,
@@ -87,13 +87,9 @@ module.exports = {
       region: process.env.S3_REGION,
       access_key_id: process.env.S3_ACCESS_KEY_ID,
       secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
-      cache_control: process.env.S3_CACHE_CONTROL,
-      download_file_duration:
-      process.env.S3_DOWNLOAD_FILE_DURATION,
-      prefix: process.env.S3_PREFIX,
     },
-     }
-      }
+    },
+    },
   ],
   modules: {
     eventBus: {
