@@ -89,8 +89,7 @@ module.exports = {
        secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
     },
     },
-     }
-      }
+  ],
   modules: {
     eventBus: {
       resolve: "@medusajs/event-bus-redis",
