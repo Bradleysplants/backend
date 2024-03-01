@@ -93,8 +93,7 @@ module.exports = {
       prefix: process.env.S3_PREFIX,
     },
      }
-      }
-  ],
+      },
   modules: {
     eventBus: {
       resolve: "@medusajs/event-bus-redis",
