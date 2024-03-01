@@ -759,7 +759,33 @@
           "title": "L",
           "prices": [
             {
-              "currency_code": "eur",
+            },
+            {
+              "title": "M",
+              "prices": [
+                {
+                  "currency_code": "eur",
+                  "amount": 3650
+                },
+                {
+                  "currency_code": "usd",
+                  "amount": 4150
+                }
+              ],
+              "options": [
+                {
+                  "value": "M"
+                }
+              ],
+              "inventory_quantity": 100,
+              "manage_inventory": true
+            }, 
+            {
+              "title": "L",
+              "prices": [
+                {
+                  "currency_code": "eur",
+                  "amount": 3650 "currency_code": "eur",
               "amount": 3650
             },
             {
