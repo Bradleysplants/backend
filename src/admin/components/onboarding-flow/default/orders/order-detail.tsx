@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  ComputerDesktopSolid,
-  CurrencyDollarSolid,
-  NextJs
-} from "@medusajs/icons";
+import { ComputerDesktopSolid, CurrencyDollarSolid, NextJs } from "@medusajs/icons";
 import { IconBadge, Heading, Text } from "@medusajs/ui";
 
 const OrderDetailDefault = () => {
