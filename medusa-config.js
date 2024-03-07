@@ -66,8 +66,8 @@ module.exports = {
         from: process.env.SES_FROM,
         template_path: process.env.SES_TEMPLATE_PATH,
         partial_path: process.env.SES_PARTIAL_PATH,
-        // optional string containing email address separated by comma
-        order_placed_cc: 'person1@example.com,person2@example.com', 
+        /** optional string containing email address separated by comma
+        order_placed_cc: 'person1@example.com,person2@example.com', **/ 
         enable_endpoint: process.env.SES_ENABLE_ENDPOINT,
         enable_sim_mode: process.env.SES_ENABLE_SIM_MODE
       },
