@@ -49,7 +49,6 @@ module.exports = {
       options: {
         serve: true,
         autoRebuild: true,
-        path: "app",
         develop: {
           port: 7001,
           logLevel: "verbose",
