@@ -33,9 +33,7 @@ module.exports = {
     admin_cors: process.env.ADMIN_CORS,
     redisUrl: process.env.REDIS_URL,
   },
-  featureFlags: {
-    medusa_v2: true,
-  },
+  
  plugins: [
     `medusa-fulfillment-manual`,
     `medusa-payment-manual`,
@@ -45,6 +43,7 @@ module.exports = {
         upload_dir: "uploads",
       },
     },
+   
     {
       resolve: "@medusajs/admin",
       options: {
@@ -98,9 +97,6 @@ module.exports = {
       options: {
         redisUrl: process.env.REDIS_URL,
       },
-    },
-    pricingService: {
-      resolve: "@medusajs/pricing",
     },
     cacheService: {
       resolve: "@medusajs/cache-redis",
