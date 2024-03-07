@@ -33,6 +33,9 @@ module.exports = {
     admin_cors: process.env.ADMIN_CORS,
     redisUrl: process.env.REDIS_URL,
   },
+  featureFlags: {
+    medusa_v2: true,
+  },
  plugins: [
     `medusa-fulfillment-manual`,
     `medusa-payment-manual`,
@@ -47,8 +50,7 @@ module.exports = {
       options: {
         serve: true,
         autoRebuild: true,
-        path: "/app",
-        outDir: "build",
+        path: "app",
         develop: {
           port: 7001,
           logLevel: "verbose",
@@ -64,8 +66,8 @@ module.exports = {
         from: process.env.SES_FROM,
         template_path: process.env.SES_TEMPLATE_PATH,
         partial_path: process.env.SES_PARTIAL_PATH,
-        // optional string containing email address separated by comma
-        order_placed_cc: 'person1@example.com,person2@example.com', 
+        /** optional string containing email address separated by comma
+        order_placed_cc: 'person1@example.com,person2@example.com', **/ 
         enable_endpoint: process.env.SES_ENABLE_ENDPOINT,
         enable_sim_mode: process.env.SES_ENABLE_SIM_MODE
       },
@@ -96,6 +98,9 @@ module.exports = {
       options: {
         redisUrl: process.env.REDIS_URL,
       },
+    },
+    pricingService: {
+      resolve: "@medusajs/pricing",
     },
     cacheService: {
       resolve: "@medusajs/cache-redis",
